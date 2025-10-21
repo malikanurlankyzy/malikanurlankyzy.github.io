@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Qadar — Стильді бір беттік шаблон</title>
+  <meta name="description" content="Минималистік, заманауи бір беттік шаблон — адаптивті және өңдеуге дайын." />
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --card:#0f1113;
+      --muted:#9aa3a8;
+      --accent:#e6b450;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      --ff-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:var(--ff-sans); background:linear-gradient(180deg,var(--bg) 0%, #071018 100%); color:#e7eef2; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; line-height:1.4;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:40px 20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent), #c27d2b);display:flex;align-items:center;justify-content:center;font-weight:700;color:#081018;letter-spacing:1px;font-size:18px;box-shadow:0 6px 18px rgba(0,0,0,0.6)
+    }
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--accent)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;padding:60px 0}
+    .title{font-size:42px;line-height:1.02;margin:0 0 18px}
+    .lead{color:var(--muted);margin-bottom:22px}
+    .cta{display:inline-flex;gap:10px;align-items:center;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent), #d39d4b);color:#061018;font-weight:700;text-decoration:none;box-shadow:0 8px 30px rgba(198,136,45,0.15)}
+    .sub-cta{background:transparent;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);color:var(--muted);}
+
+    .card{background:var(--card);border-radius:18px;padding:22px;box-shadow:0 6px 30px rgba(2,6,12,0.6)}
+
+    /* Feature list */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .feature{padding:18px;border-radius:12px;background:var(--glass);backdrop-filter: blur(6px)}
+    .feature h4{margin:0 0 8px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .features{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+      .features{grid-template-columns:1fr}
+      .title{font-size:30px}
+    }
+
+    /* Section styles */
+    section{padding:56px 0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+    .pic{height:340px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:10px;color:inherit}
+    textarea{min-height:120px}
+    .muted{color:var(--muted);font-size:13px}
+
+    footer{padding:30px 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* Micro interactions */
+    .tilt{transform:translateY(0);transition:transform .45s cubic-bezier(.2,.9,.2,1)}
+    .tilt:hover{transform:translateY(-10px)}
+
+    .small{font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">Q</div>
+        <div>
+          <div style="font-weight:700">The Qadar</div>
+          <div class="small">Стиль. Тәртіп. Өсу.</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#home">Басты</a>
+        <a href="#features">Ерекшеліктер</a>
+        <a href="#about">Біз туралы</a>
+        <a href="#contact">Байланыс</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div>
+          <h1 class="title">Өзіңді жақсартып, болашаққа әсер қалдыр.</h1>
+          <p class="lead">Минималистік дизайн, таза типография және жылдам жүктелетін беттік шаблон — мақсатқа бағытталған стиль үшін.</p>
+          <a class="cta" href="#contact">Бастау</a>
+          <a class="sub-cta" href="#features" style="margin-left:12px">Қосымша ақпарат</a>
+
+          <div class="card" style="margin-top:26px">
+            <div style="font-weight:700">Жылдам шолу</div>
+            <div class="small muted" style="margin-top:8px">Кәсіби сыртқы түр, мобильді үйлесімділік және оңай өзгертуге арналған таза код.</div>
+
+            <div class="features">
+              <div class="feature tilt">
+                <h4>Стильді кеңестер</h4>
+                <p>Көзге жағымды, табиғи үйлесімділік — киім мен уақытша имидж үшін идеялар.</p>
+              </div>
+              <div class="feature tilt">
+                <h4>Тәртіп жоспары</h4>
+                <p>Тұрақты жаттығу және күн тәртібі — нәтижеге тез қол жеткізуге көмектеседі.</p>
+              </div>
+              <div class="feature tilt">
+                <h4>Мазмұн жасау</h4>
+                <p>YouTube және әлеуметтік желіге арналған минималистік видео-стиль және сценарий идеялары.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <div style="font-weight:700">Жылдам фактілер</div>
+            <div class="small muted" style="margin-top:8px">Қарапайым өзгерістер — үлкен нәтижелер. Басты мақсат — өзіңді өсіру.</div>
+            <ul style="margin-top:12px;color:var(--muted);padding-left:18px">
+              <li>Адаптивті дизайн</li>
+              <li>Таза, оңай өңделетін код</li>
+              <li>Бастапқы стиль шаблоны</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="grid-2">
+          <div>
+            <h2>Біз туралы</h2>
+            <p class="muted">The Qadar — стиль мен тәртіпке негізделген жоба. Мұнда практикалық кеңестер, тәртіпті күн тәртібі және контент жасау дағдылары бірігіп, сіздің жеке брендіңізді құруға көмектеседі.</p>
+          </div>
+          <div>
+            <div class="pic">Көрнекі орын — сурет немесе видео осында</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features">
+        <h2>Қызметтер</h2>
+        <div class="features" style="margin-top:16px">
+          <div class="feature">
+            <h4>Персоналды кеңес</h4>
+            <p>Стиль, тамақтану және жаттығу бойынша нақты ұсыныстар.</p>
+          </div>
+          <div class="feature">
+            <h4>Контент стратегиясы</h4>
+            <p>Бейне сценарийлері мен монтаж идеялары — аудитория жинау үшін.</p>
+          </div>
+          <div class="feature">
+            <h4>Жеке даму жоспарлары</h4>
+            <p>Тәртіпті қалыптастыру мен күнделікті практикаларды енгізу.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Байланыс</h2>
+        <div class="card" style="margin-top:12px">
+          <form>
+            <input type="text" placeholder="Атыңыз" />
+            <input type="email" placeholder="Электрондық пошта" />
+            <textarea placeholder="Хабарламаңыз"></textarea>
+            <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:8px">
+              <div class="muted">Жауап жазылғанша 48 сағаттан кешікпеуге тырысамыз.</div>
+              <button class="cta" type="button">Жіберу</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© 2025 The Qadar. Барлық құқықтар қорғалған.</div>
+      <div class="small">Дизайн — минимализм және мақсаттылық.</div>
+    </footer>
+  </div>
+</body>
+</html>
